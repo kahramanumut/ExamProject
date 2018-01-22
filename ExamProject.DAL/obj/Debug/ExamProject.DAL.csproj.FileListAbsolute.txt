@@ -1,0 +1,15 @@
+C:\Users\Umut\Desktop\KonusarakOgren\ExamProject\ExamProject.DAL\bin\Debug\ExamProject.DAL.dll.config
+C:\Users\Umut\Desktop\KonusarakOgren\ExamProject\ExamProject.DAL\bin\Debug\ExamProject.DAL.dll
+C:\Users\Umut\Desktop\KonusarakOgren\ExamProject\ExamProject.DAL\bin\Debug\ExamProject.DAL.pdb
+C:\Users\Umut\Desktop\KonusarakOgren\ExamProject\ExamProject.DAL\bin\Debug\EntityFramework.dll
+C:\Users\Umut\Desktop\KonusarakOgren\ExamProject\ExamProject.DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Umut\Desktop\KonusarakOgren\ExamProject\ExamProject.DAL\bin\Debug\ExamProject.Entities.dll
+C:\Users\Umut\Desktop\KonusarakOgren\ExamProject\ExamProject.DAL\bin\Debug\ExamProject.Entities.pdb
+C:\Users\Umut\Desktop\KonusarakOgren\ExamProject\ExamProject.DAL\bin\Debug\EntityFramework.xml
+C:\Users\Umut\Desktop\KonusarakOgren\ExamProject\ExamProject.DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Umut\Desktop\KonusarakOgren\ExamProject\ExamProject.DAL\obj\Debug\ExamProject.DAL.csprojResolveAssemblyReference.cache
+C:\Users\Umut\Desktop\KonusarakOgren\ExamProject\ExamProject.DAL\obj\Debug\ExamProject.DAL.csproj.CoreCompileInputs.cache
+C:\Users\Umut\Desktop\KonusarakOgren\ExamProject\ExamProject.DAL\obj\Debug\ExamProject.DAL.dll
+C:\Users\Umut\Desktop\KonusarakOgren\ExamProject\ExamProject.DAL\obj\Debug\ExamProject.DAL.pdb
+C:\Users\Umut\Desktop\KonusarakOgren\ExamProject\ExamProject.DAL\bin\Debug\FakeData.dll
+C:\Users\Umut\Desktop\KonusarakOgren\ExamProject\ExamProject.DAL\bin\Debug\FakeData.pdb

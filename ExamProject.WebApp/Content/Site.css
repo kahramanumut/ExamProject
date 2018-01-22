@@ -1,0 +1,52 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+   
+}
+
+.input-group[class*=col-md-5]{
+    padding-top:15px;
+
+}
+
+#dropdown2 {
+    margin: auto;
+    width: 100%;
+}
+
+#answerForm {
+    margin: auto;
+    width: 12%;
+}
+
+#examCreateButton {
+    margin: auto;
+    margin-left:44%;
+}
+
+#examCompleteButton {
+    margin: auto;
+    margin-left: 44%;
+}
+
+.selected {
+    color: white;
+    background-color: green
+}
+
+.trueAnsList{
+    max-width: 120%;
+    width:200px;
+}

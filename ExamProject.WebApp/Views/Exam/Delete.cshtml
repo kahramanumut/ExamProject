@@ -1,0 +1,31 @@
+﻿@using ExamProject.WebApp.Models
+@model QuestionAnswerViewModels
+@{
+    ViewBag.Title = "Delete";
+}
+<br /><br /><br />
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Başlık</th>
+                <th>Tarih</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+
+@foreach (var item in Model.Question)
+{
+    using (Html.BeginForm(new { item.ID }))
+    {@Html.AntiForgeryToken()
+        <tr>
+            <td>@Html.DisplayFor(x => x.Question[Model.Question.IndexOf(item)].QuestionTitle)</td>
+            <td>@item.CreatedTime.ToShortDateString()</td>
+            <td><input type="submit" value="Sil" class="btn btn-danger btn-xs"/></td>
+        </tr>
+        }
+    }
+        </tbody>
+    </table>
+</div>

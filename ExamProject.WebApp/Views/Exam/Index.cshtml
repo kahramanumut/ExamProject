@@ -1,0 +1,91 @@
+﻿@using ExamProject.Entities
+@model Question
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 style="text-align:center">@Model.QuestionTitle</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12" style="margin-top:5%;margin-bottom:5%">
+            <h4>@Model.QuestionText</h4>
+            <div id="queID" style="display:none">@Model.ID</div>
+        </div>
+    </div>
+    <div class="row">
+        @for (int i = 0; i < 4; i++)
+        {
+        <div class="col-md-6">
+           @(i + 1)) @Model.Questions[i].Question<br /><hr />
+            <div class="list-group" role="group">
+                <button class="list-group-item" id="@i.ToString()0">A) @Model.Questions[i].FirstAnswer</button>
+                <button class="list-group-item" id="@i.ToString()1">B) @Model.Questions[i].SecondAnswer</button>
+                <button class="list-group-item" id="@i.ToString()2">C) @Model.Questions[i].ThirdAnswer</button>
+                <button class="list-group-item" id="@i.ToString()3">D) @Model.Questions[i].FourthAnswer</button>
+            </div>
+        </div>
+        }
+        <div class="alert alert-warning" style="display:none" id="answerAlert">Lütfen tüm soruları cevaplayınız</div>
+        <a class="btn btn-success btn-lg" id="examCompleteButton">Sınavı tamamla</a>
+        
+    </div>
+</div>
+
+<script>
+    var QueIdAndAnswer = [];
+    var i = 0;
+    var questionID = $("#queID").html();
+
+    $("button").click(function () {
+        var id = this.id;
+        $(this).css('background-color', '#919191');
+
+       for (var j = 0; j < 4; j++) {
+           var disabledButton = "#"+id[0].toString() + j;
+           $(disabledButton).attr("disabled", true);
+        }
+       
+       QueIdAndAnswer[i] = this.id;
+        i++;
+    });
+
+    $("#examCompleteButton").click(function () {
+        if (QueIdAndAnswer.length != 4) {
+            $("#answerAlert").show();
+        }
+        else {
+            $("#answerAlert").hide(function () {
+                var data = QueIdAndAnswer.toString();
+
+                $.ajax({
+                    url: "/Exam/CheckAnswer" + "?QueIdAndAnswer=" + data +"&questionID="+ questionID,
+                        type: "GET",
+                        dataType: "json",
+                        contentType: "application/json",
+                        success: function (answer) {
+                            var jsonObj = $.parseJSON(answer);
+
+                            $.each(jsonObj, function (i, item) {
+                                console.log(item.IsTrue)
+                                if (item.IsTrue) 
+                                    $("#" + item.QuestionId.toString() + item.TrueAnswer.toString()).css('background-color', '#009900');
+                                else
+                                    $("#" + item.QuestionId.toString() + item.TrueAnswer.toString()).css('background-color', '#FF0000');
+                                
+                            })
+                        },
+                        error: function () {
+                            alert("Hata..");
+                        }
+                    });
+
+
+                });
+        }
+    });
+    
+</script>

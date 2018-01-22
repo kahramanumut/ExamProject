@@ -1,0 +1,107 @@
+﻿@using ExamProject.WebApp.Models
+@model QuestionAnswerViewModels
+@{
+    ViewBag.Title = "Exam Create";
+}
+<br />
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            @{var questionList = new List<SelectListItem>
+();
+        for (int i = 0; i < 5; i++)
+        {
+            questionList.Add(new SelectListItem
+            {
+                Value = i.ToString(),
+                Text = ViewBag.quesListBag[i].QuestionTitle
+            });
+        }
+            }
+
+            @using (Html.BeginForm("Create", "Exam", new { ViewBag.quesTitle, ViewBag.quesText }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="dropdown clearfix">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdown2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                @HttpUtility.HtmlDecode(ViewBag.quesTitle)
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" id="dropdown2" aria-labelledby="dropdownMenu1">
+                @foreach (var item in questionList)
+        {
+            <li>@Html.ActionLink(HttpUtility.HtmlDecode(item.Text), item.Value, "Exam/Create")</li>
+}
+            </ul>
+        </div>
+
+        <br />
+
+        <div class="jumbotron">
+            <p>@HttpUtility.HtmlDecode(ViewBag.quesText)</p>
+        </div>
+
+
+for (int i = 0; i < 4; i++)
+{
+        <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">Soru @(i + 1)</span>
+            @Html.TextBoxFor(x => x.QuestionAnswer[i].Question, new { @class = "form-control", aria_describedby = "basic-addon1" })
+
+        </div>
+        <div class="form-inline">
+            <div class="input-group col-md-5">
+                <span class="input-group-addon" id="basic-addon1">A)</span>
+                @Html.TextBoxFor(x => x.QuestionAnswer[i].FirstAnswer, new { @class = "form-control", aria_describedby = "basic-addon1" })
+
+            </div>
+
+
+            <div class="input-group col-md-5" style="float:right">
+                <span class="input-group-addon" id="basic-addon1">B)</span>
+                @Html.TextBoxFor(x => x.QuestionAnswer[i].SecondAnswer, new { @class = "form-control", aria_describedby = "basic-addon1" })
+            </div>
+
+            <div class="input-group col-md-5">
+                <span class="input-group-addon" id="basic-addon1">C)</span>
+                @Html.TextBoxFor(x => x.QuestionAnswer[i].ThirdAnswer, new { @class = "form-control", aria_describedby = "basic-addon1" })
+            </div>
+
+            <div class="input-group col-md-5" style="float:right">
+                <span class="input-group-addon" id="basic-addon1">D)</span>
+                @Html.TextBoxFor(x => x.QuestionAnswer[i].FourthAnswer, new { @class = "form-control", aria_describedby = "basic-addon1" })
+            </div>
+        </div>
+        <br />
+        <div class="form-group" id="answerForm">
+            @{
+        SelectListItem[] answerList = new SelectListItem[4]
+       {
+new SelectListItem() { Text= "A", Value="0" },
+new SelectListItem() { Text= "B", Value="1"},
+new SelectListItem() { Text= "C", Value="2" },
+new SelectListItem() { Text= "D", Value="3" }
+       };
+            }
+
+            <label for="sel1" class="trueAnsList">Doğru cevabı seçiniz</label>
+            @Html.DropDownListFor(x => x.QuestionAnswer[i].TrueAnswer, answerList, new { @class = "form-control", id = "selAnswer" })
+        </div>
+
+        <br />
+        <hr />
+}
+        <button class="btn btn-success btn-lg" id="examCreateButton" type="submit">Sınav Oluştur</button>
+        @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+
+}
+
+
+        </div>
+        </div>
+</div>
+
+
+
+

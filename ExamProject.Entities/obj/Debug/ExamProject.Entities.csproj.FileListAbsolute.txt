@@ -1,0 +1,6 @@
+C:\Users\Umut\Desktop\KonusarakOgren\ExamProject\ExamProject.Entities\bin\Debug\ExamProject.Entities.dll
+C:\Users\Umut\Desktop\KonusarakOgren\ExamProject\ExamProject.Entities\bin\Debug\ExamProject.Entities.pdb
+C:\Users\Umut\Desktop\KonusarakOgren\ExamProject\ExamProject.Entities\obj\Debug\ExamProject.Entities.csprojResolveAssemblyReference.cache
+C:\Users\Umut\Desktop\KonusarakOgren\ExamProject\ExamProject.Entities\obj\Debug\ExamProject.Entities.csproj.CoreCompileInputs.cache
+C:\Users\Umut\Desktop\KonusarakOgren\ExamProject\ExamProject.Entities\obj\Debug\ExamProject.Entities.dll
+C:\Users\Umut\Desktop\KonusarakOgren\ExamProject\ExamProject.Entities\obj\Debug\ExamProject.Entities.pdb
